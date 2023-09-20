@@ -1,11 +1,15 @@
 package com.example.widgetskullanimi
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Toast
 import com.example.widgetskullanimi.databinding.ActivityMainBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -38,6 +42,35 @@ class MainActivity : AppCompatActivity() {
 
         val arrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1, ulkeler)
         binding.autoCompleteTextView.setAdapter(arrayAdapter)
+
+        binding.buttonToast.setOnClickListener {
+            Toast.makeText(this,"Merhaba", Toast.LENGTH_SHORT).show()
+        }
+        binding.buttonSnackbar.setOnClickListener {
+            Snackbar.make(it, "Silmek istiyor musunuz?", Snackbar.LENGTH_SHORT)
+                .setAction("EVET"){
+                    Snackbar.make(it, "Silindi", Snackbar.LENGTH_SHORT).show()
+
+                }
+                .setBackgroundTint(Color.WHITE)
+                .setTextColor(Color.BLUE)
+                .setActionTextColor(Color.RED)
+                    .show()
+        }
+        binding.buttonDialog.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle( "Başlık")
+                .setMessage("Mesaj")
+                .setPositiveButton("Tamam"){d, i ->
+                    Toast.makeText(this,"Tamam seçildi", Toast.LENGTH_SHORT).show()
+
+                }
+                .setNegativeButton("iptal"){d, i ->
+                    Toast.makeText(this,"iptal seçildi", Toast.LENGTH_SHORT).show()
+
+                }
+                .show()
+        }
 
         binding.buttonGoster.setOnClickListener {
             if (kontrol){

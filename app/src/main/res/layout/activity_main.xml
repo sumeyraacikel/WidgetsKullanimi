@@ -113,6 +113,39 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toogleButton"
             app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/buttonToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Toast"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSnackbar"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonOnay" />
+
+        <Button
+            android:id="@+id/buttonSnackbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Snackbar"
+            app:layout_constraintEnd_toStartOf="@+id/buttonDialog"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonToast"
+            app:layout_constraintTop_toBottomOf="@+id/buttonOnay" />
+
+        <Button
+            android:id="@+id/buttonDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonSnackbar"
+            app:layout_constraintTop_toBottomOf="@+id/buttonMutlu" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 
